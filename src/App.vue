@@ -1,21 +1,21 @@
 <template>
   <div id='app'>
-    {{text}}
+    {{msg}}
   </div>
 </template>
 
 <script>
   export default {
-    data() {
+    data(){
       return {
-        text: 'Hello vue'
+        msg: 'hello world'
       }
     }
   }
 </script>
 
 <style scoped>
-  #app{
-    color: #38a
-  }
+#app{
+  color: #f90
+}
 </style>
