@@ -21,19 +21,30 @@ const config = {
       {
         test: /\.css$/,
         loader: [
-          'vue-style-loader',
+          'style-loader',
           'css-loader'
         ]
       },
       {
-        test: /\.styl$/,
+        test: /\.jsx$/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.styl(us)?$/,
         use: [
+          'style-loader',
           'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
+          },
           'stylus-loader'
         ]
       },
       {
-        test: /\.(jpg|jpeg|bmp|png|gif)$/,
+        test: /\.(jpg|jpeg|bmp|png|gif|svg)$/,
         use: [
           {
             loader: 'url-loader',
